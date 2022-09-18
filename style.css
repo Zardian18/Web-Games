@@ -1,0 +1,389 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://wallpapercave.com/wp/wp2362366.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    display:block;
+
+}
+.navbar{
+    list-style-type: none;
+    float: right;
+    margin-top: 3vh;
+    margin-right: 1vw;
+    
+}
+.click{
+    background-color: transparent;
+    border: transparent;
+
+}
+.navbar li{
+    display: inline-block;
+    /* margin-top: 0.1875rem; */
+}
+.navbar li.active a{
+    background-color: white;
+    color: black;
+}
+.navbar li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: .125rem solid transparent;
+    transition: 0.5s ease;
+    padding: 1vw;
+}
+.navbar li a:hover{
+    background-color: white;
+    color: black;
+}
+.logo img{
+    float: left;
+    width: 7vw;
+    height: auto;
+}
+.main{
+    width: 100vw;
+    
+}
+.title{
+    
+    padding-top: 40vh;
+    text-align: center;
+    /* transform: translate(-50%, -50%); */
+}
+.title h1{
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+.button{
+    padding-top: 10vh;
+    text-align: center;
+}
+.btn{
+    border: .125rem solid white;
+    padding: 0.625rem 1.875rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.content{
+    padding-top: 25vh;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    color: white;
+    font-size: 2.25rem;
+
+}
+#description{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    color: white;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+::-webkit-scrollbar {
+    width: 0.875rem; 
+    color: transparent;
+}
+
+::-webkit-scrollbar-track { 
+    background: rgba(146, 199, 248, 0);
+}
+
+::-webkit-scrollbar-thumb { 
+    background: rgba(7, 58, 105, 1);
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: rgb(15, 122, 172);
+}
+
+.myInfo{
+
+    padding-top: 30vh;
+    color: white;
+    text-align: center;
+}
+.myInfo h1{
+    font-size: 5rem;
+}
+.role{
+    float: left;
+    font-weight: 700;
+    transition: 0.5s ease;
+    height: 2rem;
+    padding: 1rem;
+    margin-left: 10vw;
+    font-size: 1.5rem;
+}
+.role:hover{
+    
+    
+    transform: scale(1.05,1.05);
+}
+.role2{
+    float: right;
+    font-weight: 700;
+    transition: 0.5s ease;
+    height: 2rem;
+    padding: 1rem;
+    margin-right: 10vw;
+    font-size: 1.5rem;
+}
+.role2:hover{
+    
+    
+    transform: scale(1.05,1.05);
+}
+.role3{
+    
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: 0.5s ease;
+    border: .2rem solid transparent;
+    padding: .3rem;
+    border-left-width: 0rem;
+    border-right-width: 0rem;
+    border-radius: 2rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 5rem;
+
+}
+.role3:hover{
+    transition: 0.5s ease;
+    border: .1875rem solid rgb(123, 255, 255);
+    border-radius: 1.25rem;
+    transform: scale(1.05,1.05);
+    border-left-width: 0rem;
+    border-right-width: 0rem;
+    box-shadow: 0rem 0rem 1.5625rem rgb(123, 255, 255);
+    backdrop-filter: blur(.3125rem);
+}
+
+
+
+.bottom-container{
+    
+    padding-top: 20vh;
+    text-align: center;
+    color: white;
+    
+}
+
+.projTitle h1{
+    padding-top: 20vh;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.proj{
+    padding-left: 10vh;
+    padding-top: 10vh;
+    color:  white;
+    font-size: 1.875rem;
+}
+.projInfo{
+    padding: .625rem;
+    font-size: 1.125rem;
+    text-align: left;
+    padding-right: 10vh;
+
+}
+.imageProj{
+    width: 70vw;
+    height: 25vw;
+    padding-left: 20vw;
+}
+.projName{
+    transition: 0.5s ease;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+    border: .1875rem solid transparent;
+    padding: .1875rem;
+    border-left-width: 0rem;
+    border-right-width: 0rem;
+    border-radius: 1.25rem;
+}
+.projName:hover{
+    transition: 0.5s ease;
+    border: .1875rem solid rgb(123, 255, 255);
+    border-radius: 1.25rem;
+    border-left-width: 0rem;
+    border-right-width: 0rem;
+    box-shadow: 0rem 0rem 1.5625rem rgb(123, 255, 255);
+    backdrop-filter: blur(.3125rem);
+}
+.gameLinkMine{
+    background-color: white;
+    color: black;
+    transition: 0.5s ease;
+}
+.gameLinkMine:hover{
+    transition: 0.5s ease;
+    color: blue;
+    background-color: white;
+}
+.foot, .foot2{
+    padding-top: 40vh;
+    text-align: center;
+    color: white;
+}
+.contactMe{
+    padding-top: 20vh;
+    text-align: center;
+    font-size: 3.125rem;
+    color: white;
+    font-weight: bold;
+}
+
+.Contact{
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 8.7vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.Contact2{
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 1vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.Contact3{
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 1vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.Contact3:hover, .Contact3 a:hover{
+    color: rgb(106, 219, 219);
+}
+.email{
+    color: white;
+    text-decoration: none;
+}
+.contactIcon{
+    height: 2.8125rem;
+    width: 2.8125rem;
+    border: 0rem solid white;
+    border-radius: 10rem;
+    overflow: hidden;
+    margin: .625rem;
+    
+
+}
+.contactIcon img{
+    transition: 0.5s all ease-in-out;
+    width: 100%;
+}
+.contactIcon:hover img{
+    transform: scale(1.525);
+    transition:0.5s 
+    
+}
+.iconPadding{
+    padding-left: 10vw;
+}
+.browse{
+    padding-top: 50vh;
+    text-align: center;
+    
+}
+
+
+
+
+
+@media(max-width:62.5rem){
+    html{
+        font-size: 50%;
+    }
+}
+@media(max-width:48rem){
+    html{
+        font-size: 40%;
+    }
+    .bottom-container{
+        margin-top: 30vh;
+    }
+    .role{
+        margin-left: 20vw;
+    }
+    .role2{
+        margin-right: 20vw;
+    }
+    
+}
+@media(min-width:50rem){
+    
+    .role{
+        margin-left: 30vw;
+    }
+    .role2{
+        margin-right: 30vw;
+    }
+    .bottom-container{
+        margin-top: 42vh;
+    }
+}
+@media(min-width:80rem){
+    
+    .bottom-container{
+        margin-top: 10vh;
+    }
+    
+}
+@media only screen and (min-width:50rem) and (max-width:80rem){
+
+    .navbar li{
+        font-size: 130% ;
+    }
+}
+
+@media(max-width:80rem){
+    
+    /* .imageProj{
+        padding-left: 0vw;
+    } */
+    .proj{
+        padding-left: 7vw;
+        padding-bottom: 10vh;
+    }
+    
+    
+}
+@media(max-width:80rem){
+
+    .foot{
+        padding-top: 20vh;
+        
+    }
+}
