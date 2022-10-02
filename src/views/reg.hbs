@@ -95,7 +95,7 @@
 
 <body>
     <h2>Create Account</h3>
-        <form name="myForm">
+        <form name="myForm" onsubmit="return(validate());">
             <table align="center" cellpadding="10">
 
                 <tr>
@@ -109,9 +109,9 @@
                 <tr>
                     <td>Email ID</td>
                     <td><input type="email" name="EmailID" maxlength="100" placeholder="Enter a valid gmail id" /></td>
-                    <td>Password</td>
+                    <td>Mobile Number</td>
                     <td>
-                        <input type="password" name="Pass" maxlength="10" placeholder="password" />
+                        <input type="text" name="MobileNumber" maxlength="10" placeholder="Enter 10 digit number" />
                     </td>
                 </tr>
                 <tr>
@@ -254,7 +254,6 @@
                 <tr>
                     <td colspan="4" align="center">
                         <input type="submit" value="CREATE">
-                        <button onclick="validate()">CLick</button>
                         <input type="reset" value="RESET">
                     </td>
                 </tr>

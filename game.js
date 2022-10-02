@@ -37,6 +37,12 @@ function setGame() {
 function setDesc() {
 	document.getElementById("description").innerHTML = gameIFrame[id].desc;
 }
+function AddGame(){
+	gameIFrame.length+=1;
+	document.getElementById("iFrameCollect").innerHTML= gameIFrame[gameIFrame.length].link;
+	document.getElementById("gameName").innerHTML=gameIFrame[gameIFrame.length].name
+	gameIFrame[gameIFrame.length].desc="null";
+}
 
 setGameTitle();
 setGame();
