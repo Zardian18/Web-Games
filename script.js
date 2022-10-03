@@ -1,4 +1,5 @@
 function validate() {
+	event.preventDefault();
 	// if (document.myForm.FirstName.value == "") {
 	// 	alert("Please provide your First Name!");
 	// 	document.myForm.FirstName.focus();
@@ -70,23 +71,42 @@ function validate() {
 	// }
 	alert("Form Submitted");
 
-	const toSend = {
+	const formData = {
 		fname: document.myForm.FirstName.value,
 		lname: document.myForm.LastName.value,
 		age: document.myForm.Age.value,
 		email: document.myForm.EmailID.value,
 		password: document.myForm.Pass.value,
+		gender: document.myForm.Gender.value,
+		bday: document.myForm.BirthDay.value,
+		bmonth: document.myForm.BirthdayMonth.value,
+		byear: document.myForm.BirthdayYear.value,
+		city: document.myForm.City.value,
+		state: document.myForm.State.value,
+		country: document.myForm.Country.value,
 	};
 
-	fetch(`http://localhost:3000/register/${toSend.fname}/${toSend.lname}`, {
-		mode: "no-cors",
-	})
+	fetch(
+		`http://localhost:3000/register/
+		${formData.fname}/
+		${formData.lname}/
+		${formData.password}/
+		${formData.email}/
+		${formData.age}/
+		`,
+		{
+			mode: "no-cors",
+		}
+	)
 		.then((res) => res.json())
 		.then((res) => {
 			console.log(res);
-			console.log(1);
 		})
-		.catch(console.log);
+		.catch((e) => {
+			console.log("error");
+		});
+	location.replace("http://localhost:5500/");
+	alert("Registered successfully");
 }
 function getAge() {
 	const latestDate = new Date();
@@ -104,4 +124,42 @@ function getAge() {
 		}
 	}
 	document.getElementById("age").value = age;
+}
+
+function validate1() {
+	event.preventDefault();
+
+	const formData = {
+		email: document.myForm.EmailID.value,
+		password: document.myForm.Pass.value,
+	};
+	let result = null;
+
+	fetch(
+		`http://localhost:3000/login/
+		${formData.email}/
+		${formData.password}/
+		`,
+		{
+			mode: "no-cors",
+		}
+	)
+		.then((res) => res.json())
+		.then((res) => {
+			alert(res);
+		})
+		.catch((e) => {
+			console.log("error");
+			console.log(e);
+			// alert("error");
+		});
+	if (
+		formData.email == "zardian018@gmail.com" &&
+		formData.password == "1234"
+	) {
+		location.replace("http://localhost:5500/indexLogged.html");
+		alert("Login successful");
+	} else {
+		alert("Failed");
+	}
 }

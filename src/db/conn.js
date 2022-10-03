@@ -11,3 +11,5 @@ mongoose
 	.catch((e) => {
 		console.log(e);
 	});
+var conn = mongoose.connection;
+module.exports = conn;

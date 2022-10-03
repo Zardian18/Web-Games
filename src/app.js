@@ -2,7 +2,9 @@ const exp = require("constants");
 const express = require("express");
 const app = express();
 const path = require("path");
-require("./db/conn");
+const conn = require("./db/conn");
+const userModel = require("./models/model");
+require("./models/model");
 const cors = require("cors");
 
 const port = process.env.PORT || 3000;
@@ -29,11 +31,42 @@ app.use(express.json());
 app.options(cors());
 // app.set("view engine", "hbs");
 
-app.get("/register/:fn/:ln", (req, res) => {
-	const { fn, ln, em, pwd } = req.params;
+app.get("/register/:fn/:ln/:pass/:em/:age", (req, res) => {
+	const { fn, ln, pass, em, age } = req.params;
 	console.log(fn);
+	console.log(1);
 	console.log(ln);
-	res.json("hello");
+	console.log(pass);
+	console.log(em);
+	console.log(age);
+	console.log(1);
+	const userData = new userModel({
+		first_name: fn,
+		last_name: ln,
+		pass,
+		email: em,
+	});
+	userData
+		.save()
+		.then((item) => {
+			res.json("Details Saved");
+			console.log(1);
+		})
+		.catch((err) => {
+			// res.status(400).json("Error");
+		});
+});
+
+app.get("/login/:em/:pass", async (req, res) => {
+	try {
+		const { em, pass } = req.params;
+		const result = await userModel.findOne({ email: em, pass: pass });
+		console.log(result);
+		return res.json("good");
+	} catch (err) {
+		console.log(err.message);
+		res.status(500).send("Server Error");
+	}
 });
 
 app.listen(port, () => {
