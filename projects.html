@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="games.css">
     <link rel="icon" href="Images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,24 +23,39 @@
 
     <ul class="navbar">
         <li id="button"><a href="indexLogged.html">Home</a></li>
-        <li id="button"><a href="games.html">Games</a></li>
+        <li id="button"><a href="games2.html">Games</a></li>
         <li id="button" class="active"><a href="projects.html">Upload</a></li>
     </ul>
     <br>
-    <div class="myInfo">
+    <br>
+    <br>
+    <br>
+    <br>
+    <span class="email3">
         <a href="https://sharemygame.com/upload" target="_blank" style="color: white; text-decoration: none;">Please
             Upload your game
             here</a>
-    </div>
-    <div class="myInfo">
+    </span><br><br><br>
+    <div class="email2">
         Name of the game:
         <input type="text" id="gameName">
     </div>
-    <div class="myInfo">
+    <div class="email2">
+        Thumbnail:
+        <input type="file" id="thumbnailImg">
+    </div>
+    <div class="email2">
+        Description:
+        <input type="text" id="desc">
+    </div>
+    <div class="email2">
 
         Enter Iframe here:
         <input type="text" id="iFrameCollect">
-        <button type="button" onclick="AddGame()"></button>
+
+    </div>
+    <div class="email2">
+        <button type="button" onclick="AddGame()" class="btn" id="addBtn">ADD</button>
     </div>
 
 

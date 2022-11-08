@@ -24,7 +24,13 @@ var gameIFrame = [
 		name: '<h3 style="border: 2px solid white;padding: 5px;border-radius:15px">Bomb Dropper<h3>',
 		desc: "This game was a fun little project designed for mobiles, I learnt the touch and slide functionality on mobile inputs using this game. You can slide you fingers(or cursor) to move the player and dodge the bombs. Also I learnt parallax using this project and the main menu is an infinite parallax(the image keeps repeating).",
 	},
+	{
+		link: '<iframe src="https://i.simmer.io/@Zardian/snowboarder" style="width:960px;height:600px"></iframe>',
+		name: '<h3 style="border: 2px solid white;padding: 5px;border-radius:15px">Snowboarder<h3>',
+		desc: "This game was a fun little project designed for mobiles, I learnt the touch and slide functionality on mobile inputs using this game. You can slide you fingers(or cursor) to move the player and dodge the bombs. Also I learnt parallax using this project and the main menu is an infinite parallax(the image keeps repeating).",
+	},
 ];
+let currId = 5;
 const id = localStorage.getItem("id");
 
 function setGameTitle() {
@@ -37,13 +43,25 @@ function setGame() {
 function setDesc() {
 	document.getElementById("description").innerHTML = gameIFrame[id].desc;
 }
-function AddGame(){
-	gameIFrame.length+=1;
-	document.getElementById("iFrameCollect").innerHTML= gameIFrame[gameIFrame.length].link;
-	document.getElementById("gameName").innerHTML=gameIFrame[gameIFrame.length].name
-	gameIFrame[gameIFrame.length].desc="null";
+function AddGame() {
+	//gameIFrame.length+=1;
+	gameIFrame[currId].link =
+		document.getElementById("iFrameCollect").innerHTML;
+	gameIFrame[currId].name = document.getElementById("gameName").innerHTML;
+	gameIFrame[currId].desc = "null";
+
+	var iframeId = document.getElementById("iFrameCollect").value;
+	// alert(iframeId);
+	if (iframeId == "") {
+		alert("please enter Iframe");
+		return -1;
+	} else {
+		alert("Game added successfully ");
+		location.replace("http://localhost:5500/games2.html");
+	}
+	currId++;
 }
 
 setGameTitle();
 setGame();
-setDesc();
+// setDesc();

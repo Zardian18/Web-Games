@@ -61,14 +61,14 @@ function validate() {
 		document.myForm.Country.focus();
 		return false;
 	}
-	if (
-		document.myForm.Life.checked == false &&
-		document.myForm.Property.checked == false &&
-		document.myForm.Liability.checked == false
-	) {
-		alert("Please tell your interested games!");
-		return false;
-	}
+	// if (
+	// 	document.myForm.Life.checked == false &&
+	// 	document.myForm.Property.checked == false &&
+	// 	document.myForm.Liability.checked == false
+	// ) {
+	// 	alert("Please tell your interested games!");
+	// 	return false;
+	// }
 	alert("Form Submitted");
 
 	const formData = {
@@ -101,6 +101,7 @@ function validate() {
 		.then((res) => res.json())
 		.then((res) => {
 			console.log(res);
+			alert(res);
 		})
 		.catch((e) => {
 			console.log("error");
@@ -141,25 +142,32 @@ function validate1() {
 		${formData.password}/
 		`,
 		{
-			mode: "no-cors",
+			// mode: "no-cors",
 		}
 	)
 		.then((res) => res.json())
 		.then((res) => {
-			alert(res);
+			if (res == "success") {
+				location.replace("http://localhost:5500/indexLogged.html");
+				alert("Logged In successfully");
+			} else {
+				location.replace("http://localhost:5500/login.html");
+				alert("Failed");
+			}
+			console.log(res);
 		})
 		.catch((e) => {
 			console.log("error");
 			console.log(e);
 			// alert("error");
 		});
-	if (
-		formData.email == "zardian018@gmail.com" &&
-		formData.password == "1234"
-	) {
-		location.replace("http://localhost:5500/indexLogged.html");
-		alert("Login successful");
-	} else {
-		alert("Failed");
-	}
+	// if (
+	// 	formData.email == "zardian018@gmail.com" &&
+	// 	formData.password == "1234"
+	// ) {
+	// 	location.replace("http://localhost:5500/indexLogged.html");
+	// 	alert("Login successful");
+	// } else {
+	// 	alert("Failed");
+	// }
 }
