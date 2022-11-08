@@ -13,21 +13,23 @@ const domainsFromEnv = process.env.CORS_DOMAINS || "";
 const whitelist = domainsFromEnv.split(",").map((item) => item.trim());
 
 const corsOptions = {
-	origin: function (origin, callback) {
-		if (!origin || whitelist.indexOf(origin) !== -1) {
-			callback(null, true);
-		} else {
-			callback(new Error("Not allowed by CORS"));
-		}
-	},
-	credentials: true,
+	origin: "*",
+	methods: ["GET", "POST"],
+	allowedHeaders: ["Content-Type"],
 };
 
 app.use(cors(corsOptions));
 
 // const static_path = path.join(__dirname, "..");
 // app.use(express.static(static_path));
-app.use(express.json());
+// app.use(express.json());
+// app.use(function (req, res, next) {
+// 	res.setHeader("Access-Control-Allow-Origin", "*");
+// 	res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+// 	res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+// 	res.setHeader("Access-Control-Allow-Credentials", true);
+// 	next();
+// });
 app.options(cors());
 // app.set("view engine", "hbs");
 
@@ -57,12 +59,19 @@ app.get("/register/:fn/:ln/:pass/:em/:age", (req, res) => {
 		});
 });
 
-app.get("/login/:em/:pass", async (req, res) => {
+app.get("/login/:em/:pass", (req, res) => {
 	try {
 		const { em, pass } = req.params;
-		const result = await userModel.findOne({ email: em, pass: pass });
-		console.log(result);
-		return res.json("good");
+		// console.log("Email: " + em);
+		// console.log("Password: " + pass);
+		userModel.findOne({ email: em, pass: pass }, (err, obj) => {
+			console.log(obj);
+			if (obj !== null) {
+				return res.json("success");
+			} else {
+				return res.json("fail");
+			}
+		});
 	} catch (err) {
 		console.log(err.message);
 		res.status(500).send("Server Error");
