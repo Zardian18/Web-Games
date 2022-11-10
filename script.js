@@ -152,7 +152,7 @@ function validate1() {
 				alert("Logged In successfully");
 			} else {
 				location.replace("http://localhost:5500/login.html");
-				alert("Failed");
+				alert("Login Failed");
 			}
 			console.log(res);
 		})
